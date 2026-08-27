@@ -1,0 +1,22 @@
+[project]
+name = "modulo-08"
+version = "0.1.0"
+description = "Módulo 8. Arquitectura Hexagonal (Puertos y Adaptadores)"
+authors = [
+    {name = "Alan Vazquez Velasco"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [
+    { include = "modulo_08", from = "src" }
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,16 @@
+from typing import Protocol
+from uuid import UUID
+
+from orders_service.domain.entities import Order
+
+
+class OrderRepository(Protocol):
+    def add(self, order: Order) -> Order: ...
+
+    def get_by_id(self, order_id: UUID) -> Order | None: ...
+
+    def list_all(self) -> list[Order]: ...
+
+    def update(self, order: Order) -> Order: ...
+
+    def delete(self, order_id: UUID) -> bool: ...

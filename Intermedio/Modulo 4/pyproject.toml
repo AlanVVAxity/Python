@@ -1,0 +1,42 @@
+[project]
+name = "modulo-04"
+version = "0.1.0"
+description = "Módulo 4. Concurrencia y rendimiento"
+authors = [
+    {name = "Alan Vazquez Velasco"}
+]
+license = "MIT"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [
+    { include = "modulo_04", from = "src" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+httpx = "^0.28.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.3"
+ruff = "^0.9.3"
+pre-commit = "^4.6.2"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

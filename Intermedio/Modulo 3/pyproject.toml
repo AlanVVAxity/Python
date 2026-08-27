@@ -1,0 +1,71 @@
+[project]
+name = "modulo-03"
+version = "0.1.0"
+description = "Modulo 3 - Pruebas y TDD"
+authors = [
+    {name = "Alan Vazquez Velasco"}
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [
+    { include = "modulo_03", from = "src" }
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+    "hypothesis (>=6.165.10,<7.0.0)",
+    "ruff (>=0.16.4,<0.17.0)",
+    "mypy (>=2.3.1,<3.0.0)",
+    "pre-commit (>=4.6.2,<5.0.0)"
+]
+
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra --strict-markers --cov=modulo_03 --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "unit: pruebas unitarias sin dependencias externas",
+    "property: pruebas basadas en propiedades con Hypothesis",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["modulo_03"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 80
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "src"
+strict = true
+warn_unused_ignores = true

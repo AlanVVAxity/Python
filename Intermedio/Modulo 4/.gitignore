@@ -1,0 +1,28 @@
+# Entorno virtual
+.venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Herramientas de pruebas y cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ruff
+.ruff_cache/
+
+# Entornos y secretos
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de perfilado
+*.prof
+
+# Pre-commit
+.pre-commit-cache/

@@ -1,0 +1,63 @@
+[project]
+name = "modulo-05"
+version = "0.1.0"
+description = "Módulo 5. Principios SOLID aplicados en Python"
+authors = [
+    {name = "Alan Vazquez Velasco"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [
+    { include = "modulo_05", from = "src" }
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+    "ruff (>=0.16.4,<0.17.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "mypy (>=2.3.1,<3.0.0)",
+    "pre-commit (>=4.6.2,<5.0.0)"
+]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["modulo_05"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "src"
+strict = true
+warn_unused_configs = true

@@ -1,0 +1,32 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Archivos compilados y caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cachés de herramientas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+
+# Archivos del sistema y editores
+.DS_Store
+.vscode/
+.idea/
+
+# Archivos de distribución
+build/
+dist/
+*.egg-info/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
