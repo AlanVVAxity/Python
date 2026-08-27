@@ -1,0 +1,25 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Herramientas de pruebas y análisis
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Empaquetado
+build/
+dist/
+*.egg-info/
+
+# IDEs y sistema operativo
+.vscode/
+.idea/
+.DS_Store

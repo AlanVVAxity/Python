@@ -1,0 +1,50 @@
+[project]
+name = "modulo_07"
+version = "0.1.0"
+description = "Modulon 7 - HTTP y consumo de APIs (Smocker)"
+authors = [
+    {name = "Alan Vazquez Velasco"}
+]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "modulo_07", from = "src" }
+]
+
+requires-python = ">=3.12,<4.0"
+dependencies = ["httpx (>=0.28.1,<0.29.0)"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "pytest-httpx (>=0.36.2,<0.37.0)",
+    "ruff (>=0.16.4,<0.17.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "isort (>=8.0.1,<9.0.0)",
+    "pre-commit (>=4.6.2,<5.0.0)"
+]

@@ -1,0 +1,13 @@
+from typing import Protocol
+
+from modulo_05.models import Task
+
+
+class TaskRepository(Protocol):
+    def add(self, task: Task) -> Task: ...
+
+    def get_by_id(self, task_id: int) -> Task | None: ...
+
+    def list_all(self) -> list[Task]: ...
+
+    def update(self, task: Task) -> Task: ...
