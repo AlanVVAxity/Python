@@ -1,0 +1,21 @@
+# Entorno virtual
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Herramientas de pruebas y cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Herramientas de calidad
+.ruff_cache/
+.mypy_cache/
+
+# Archivos del sistema y editor
+.DS_Store
+.vscode/
+.idea/

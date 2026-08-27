@@ -1,0 +1,51 @@
+[project]
+name = "modulo_03"
+version = "0.1.0"
+description = "Funciones y programación pythonic - Modulo 3"
+authors = [
+    {name = "Alan Vazquez Velasco"}
+]
+license = "MIT"
+requires-python = ">=3.12,<4.0"
+dependencies = []
+
+[tool.poetry]
+packages = [
+    { include = "modulo_03", from = "src" }
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["modulo_03"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "black (>=26.5.1,<27.0.0)",
+    "isort (>=8.0.1,<9.0.0)",
+    "ruff (>=0.16.4,<0.17.0)",
+    "pre-commit (>=4.6.2,<5.0.0)",
+    "pytest (>=9.1.1,<10.0.0)"
+]
